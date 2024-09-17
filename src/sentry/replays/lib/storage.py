@@ -196,7 +196,7 @@ class SimpleStorageBlob:
             blob = storage.open(key)
             result = blob.read()
             blob.close()
-        except Exception:
+        except Exception as e:
             logger.warning("Storage GET error: %s", repr(e))
             return None
         else:
